@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace Controls
+namespace Core.Controls
 {
     public class @Control : IInputActionCollection, IDisposable
     {

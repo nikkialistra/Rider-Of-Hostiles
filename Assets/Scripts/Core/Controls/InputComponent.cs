@@ -1,10 +1,10 @@
 ﻿using Unity.Entities;
 using UnityEngine;
 
-namespace Player.Components
+namespace Core.Controls
 {
     [GenerateAuthoringComponent]
-    public struct PlayerInputComponent : IComponentData
+    public struct InputComponent : IComponentData
     {
         public Vector2 Move;
     }

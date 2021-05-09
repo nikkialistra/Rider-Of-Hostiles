@@ -1,10 +1,11 @@
-﻿using Player.Components;
+﻿using Core.Controls;
+using Entities.Player.Components;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Physics;
 using Unity.Physics.Extensions;
 
-namespace Player.Systems
+namespace Entities.Player.Systems
 {
     [UpdateInGroup(typeof(FixedStepSimulationSystemGroup))]
     public class PlayerMovementSystem : SystemBase
@@ -12,14 +13,15 @@ namespace Player.Systems
         protected override void OnUpdate()
         {
             var deltaTime = Time.DeltaTime;
+            
 
             Entities
-                .ForEach((ref PhysicsVelocity velocity, ref PhysicsMass mass, in PlayerMovementComponent movement, in PlayerInputComponent input) =>
+                .ForEach((ref PhysicsVelocity velocity, ref PhysicsMass mass, in PlayerMovementComponent movement, in InputComponent input) =>
                 {
                     var move = input.Move;
                     
-                    var direction = new float3(move.x, 0, move.y); 
-                    PhysicsComponentExtensions.ApplyLinearImpulse(ref velocity, mass, direction * movement.Force * deltaTime);
+                    var direction = new float3(move.x, 0, move.y);
+                    velocity.ApplyLinearImpulse(mass, direction * movement.Force * deltaTime);
                 })
                 .Schedule();
         }
