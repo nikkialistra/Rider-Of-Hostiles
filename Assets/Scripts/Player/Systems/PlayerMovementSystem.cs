@@ -3,7 +3,6 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Physics;
 using Unity.Physics.Extensions;
-using UnityEngine;
 
 namespace Player.Systems
 {
@@ -14,15 +13,13 @@ namespace Player.Systems
         {
             var deltaTime = Time.DeltaTime;
 
-            var horizontal = Input.GetAxis("Horizontal");
-            var vertical = Input.GetAxis("Vertical");
-
             Entities
-                .WithAll<PlayerMovementComponent>()
-                .ForEach((ref PhysicsVelocity velocity, ref PhysicsMass mass, in PlayerMovementComponent movement) =>
+                .ForEach((ref PhysicsVelocity velocity, ref PhysicsMass mass, in PlayerMovementComponent movement, in PlayerInputComponent input) =>
                 {
-                    var direction = new float3(horizontal, 0, vertical); 
-                    PhysicsComponentExtensions.ApplyLinearImpulse(ref velocity, mass, direction * movement.Force);
+                    var move = input.Move;
+                    
+                    var direction = new float3(move.x, 0, move.y); 
+                    PhysicsComponentExtensions.ApplyLinearImpulse(ref velocity, mass, direction * movement.Force * deltaTime);
                 })
                 .Schedule();
         }
