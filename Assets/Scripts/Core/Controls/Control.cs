@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Controls/Control.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Core/Controls/Control.inputactions'
 
 using System;
 using System.Collections;
@@ -141,7 +141,7 @@ namespace Core.Controls
 
         // Player
         private readonly InputActionMap m_Player;
-        private IPlayerActions m_PlayerActionsCallbackInterface;
+        private IPlayerActions? m_PlayerActionsCallbackInterface;
         private readonly InputAction m_Player_Move;
         public struct PlayerActions
         {

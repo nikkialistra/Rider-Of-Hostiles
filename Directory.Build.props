@@ -1,5 +1,9 @@
-<Project>
- <PropertyGroup>
-   <Nullable>enable</Nullable>
- </PropertyGroup>
+﻿<Project>
+	<PropertyGroup Condition="'$(MSBuildProjectName)' == 'Core'">
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(MSBuildProjectName)' == 'Entities'">
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 </Project>

@@ -13,7 +13,7 @@ namespace Core.Controls
         {
             _control = new Control();
             _control.Enable();
-            
+
             _playerActions = _control.Player;
         }
 
