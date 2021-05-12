@@ -1,0 +1,38 @@
+.root {
+    width: 100%;
+    height: 100%;
+}
+
+.third {
+    height: 33.33%;
+}
+
+.row_direction {
+    flex-direction: row;
+}
+
+.root {
+    width: 100%;
+    height: 100%;
+}
+
+Slider {
+    width: 350px;
+    height: 40px;
+    padding-top: 10px;
+}
+
+.center {
+    justify-content: center;
+}
+
+#unity-dragger {
+    width: 20px;
+    height: 20px;
+    margin-top: -4px;
+    background-color: black;
+}
+
+.immunity {
+    margin-bottom: 25px;
+}

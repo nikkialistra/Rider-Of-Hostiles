@@ -22,7 +22,7 @@ namespace Core.Controls
             InputSystem.Update();
 
             var move = _playerActions.Move.ReadValue<Vector2>();
-            
+
             Entities
                 .ForEach((ref InputComponent input) =>
                 {

@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="GameView.uss" />
+    <ui:VisualElement name="root" class="root">
+        <ui:VisualElement name="top" class="third" />
+        <ui:VisualElement name="middle" class="third row_direction" style="flex-direction: row;">
+            <ui:VisualElement name="left_bar" class="center">
+                <ui:Slider value="100" high-value="100" name="health" class="health" />
+                <ui:Slider value="100" high-value="100" name="stamina" class="stamina" />
+                <ui:Slider value="100" high-value="100" name="hunger" class="hunger" />
+                <ui:Slider value="100" high-value="100" name="thirst" class="thirst" />
+                <ui:Slider value="100" high-value="100" name="immunity" class="immunity" />
+                <ui:Slider value="50" high-value="100" name="temperature" class="temperature" />
+                <ui:Slider value="50" high-value="100" name="psyche" class="psyche" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
